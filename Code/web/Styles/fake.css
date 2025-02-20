@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+form{
+    background-image: url(".../images/Logout 1.png");
+    width: 464px;
+    height: 703px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 16px;
+    padding: 120px 50px;
+    box-shadow: 4px 4px 16px rgb(55, 22, 133);
+    z-index: -1;
+}
+
+h1{
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    color: white;
+}
+
+h3{
+    position: absolute;
+    top: 13%;
+    left: 41%;
+    color: white;
+}
+
+h5{
+    position: absolute;
+    top: 16%;
+    left: 40%;
+    color: white;
+}
+
+p{
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    color: white;
+}
+
+img{
+    position: absolute;
+    top: 5%;
+    left: 63%;
+}
+
+a {
+    color: #8f40dd;
+    font-size: 1.1rem;
+}
+
+h:form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h:commandButton {
+    position: absolute;
+    left: 90%;
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+h:commandButton:hover {
+  background-color: #2980b9;
+}
+

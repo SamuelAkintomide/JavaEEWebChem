@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Profile</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href=".../Styles/default.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/navBar.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/delete.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <img class="logo" src=".../images/conical.png" alt="logo" width="110px"/>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href=".../index.xhtml">Home</a></li>                    
+                    <li><a href="learn.xhtml">Learn</a></li>
+                    <li><a href="order.xhtml">Order</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="contact.xhtml"><button>Contact</button></a>
+        </header>
+        <main>    
+            <h1>Don't Go</h1>
+            <h3>Are You Sure You Wish To Delete Your Account #{User.username}</h3>
+            <p>All your data will be lost</p>
+            <h:form>
+                <h:commandButton value="Delete Account" action="#{User.delete}" />
+            </h:form>>
+        </main>
+        <div>
+            <nav1>
+                <ul>
+                    <li>
+                        <a href="#"> 
+                            <img src=".../images/conical.png" alt="logo" width="100px"/>
+                        </a>
+                    </li>
+                    <li><a1 href="profile.xhtml"><i class="fas fa-profile"></i>
+                    <span class="nav1-item">Edit Profile</span></a1></li>
+                    <li><a1 href="#"><i class="fas fa-change"></i>
+                    <span class="nav1-item">Change Password</span></a1></li>
+                    <li><a1 href="#"><i class="fas fa-change1"></i>
+                    <span class="nav1-item">Email Notifications</span></a1></li>
+                    <li><a1 href="#"><i class="fas fa-change2"></i>
+                    <span class="nav1-item">Delete Account</span></a1></li>
+                    <li><a href=".../index.xhtml" action="#{User.logout()}" class="logout"><i class="fas fa-change3"></i>
+                    <span class="nav1-item">Logout</span></a></li>
+                </ul>
+            </nav1>
+        </div>
+   </h:body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Profile</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href=".../Styles/default.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/navBar.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/profile.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <img class="logo" src=".../images/conical.png" alt="logo" width="110px"/>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href=".../index.xhtml">Home</a></li>                    
+                    <li><a href="learn.xhtml">Learn</a></li>
+                    <li><a href="order.xhtml">Order</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="contact.xhtml"><button>Contact</button></a>
+        </header>
+        <main>    
+            <h1>Welcome Back</h1>
+            <h3>Edit Your Profile Below #{User.username}</h3>
+            <p>Insert All your data to change values</p>
+            <div class="user-form">
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="firstName" value="First Name: " />
+                        <h:inputText id="firstName" value="#{User.firstName}" required="true" />
+
+                        <h:outputLabel for="lastName" value="Last Name: " />
+                        <h:inputText id="lastName" value="#{User.lastName}" required="true" />
+
+                        <h:outputLabel for="email" value="Email: " />
+                        <h:inputText id="email" value="#{User.email}" required="true" />
+
+                        <h:outputLabel for="phone" value="Phone Number: " />
+                        <h:inputText id="phone" value="#{User.phone}" required="true"/>
+
+                        <h:outputLabel for="password" value="Password:" />
+                        <h:inputSecret id="password" value="#{User.password}" required="true"/>
+                        
+                        <h:outputLabel for="username" value="Username:" />
+                        <h:inputText id="username" value="#{User.username}" required="true"/>
+
+                        <h:commandButton value="Save" action="#{User.update}" />
+                    </h:panelGrid>
+                    <h:commandButton value="Delete Account" action="#{User.delete}" />
+                </h:form> 
+            </div>
+        </main>
+        <div>
+            <nav1>
+                <ul>
+                    <li>
+                        <a href="#"> 
+                            <img src=".../images/conical.png" alt="logo" width="100px"/>
+                        </a>
+                    </li>
+                    <li><a href="#profile"><i class="fas fa-profile"></i>
+                    <span class="nav1-item">Edit Profile</span></a></li>
+                    <li><a href="#"><i class="fas fa-change"></i>
+                    <span class="nav1-item">Change Password</span></a></li>
+                    <li><a href="#"><i class="fas fa-change1"></i>
+                    <span class="nav1-item">Email Notifications</span></a></li>
+                    <li><a href="#"><i class="fas fa-change2"></i>
+                    <span class="nav1-item">Privacy and security</span></a></li>
+                    <li><a href="delete.xhtml" class="delete"><i class="fas fa-change3"></i>
+                    <span class="nav1-item">Delete Account</span></a></li>
+                    <li><a href=".../index.xhtml" action="#{User.logout()}" class="logout"><i class="fas fa-change3"></i>
+                    <span class="nav1-item">Logout</span></a></li>
+                </ul>
+            </nav1>
+        </div>
+   </h:body>
+</html>

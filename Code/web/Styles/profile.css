@@ -1,0 +1,50 @@
+.user-form {
+    position: absolute;
+    top: 120%;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid purple;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgb(55, 22, 133);
+}
+
+.user-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.user-form input[type="submit"] {
+    background-color: #8f40dd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-form input[type="submit"]:hover {
+    background-color: rgba(0,136,169,1);
+}
+
+h1, h3, p, label{
+    color: white;
+}
+
+label[for="firstName"] {
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+        margin-right: 10px;
+}

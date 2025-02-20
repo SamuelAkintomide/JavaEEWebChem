@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Delete Account</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href=".../Styles/fake.css"/>
+    </h:head>
+    <h:body>
+        <main>    
+            <a href="profile.xhtml"><img src=".../images/Xbutton.png" alt="Home" width="20px" name="home"/></a>
+            <h1>Don't Go</h1>
+            <h3>Are You Sure You Wish To Delete Your Account </h3>
+            <h5>All your data will be lost</h5>
+            <h:form>
+                <h:panelGrid columns="2">
+
+                    <h:outputLabel for="username" value="Username:" />
+                    <h:inputText id="username" value="#{User.username}" required="true"/>
+
+                    <h:outputLabel for="password" value="Password:" />
+                    <h:inputSecret id="password" value="#{User.password}" required="true"/>
+
+                </h:panelGrid>
+                <h:commandButton value="Confirm Account Deletion" action="#{User.delete}" />
+            </h:form> 
+            <p>Cancel and go back <a href=".../index.xhtml">Home</a></p>
+        </main>
+   </h:body>
+</html>

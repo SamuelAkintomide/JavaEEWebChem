@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <title>Sign Up</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href=".../Styles/signup.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <a href=".../index.xhtml"><img src=".../images/Xbutton.png" alt="Home" width="20px" name="home"/></a>
+            <h1>Create A New Account</h1>
+            <h3>Join Today</h3>
+           <h:panelGrid columns="3">
+            <label for="firstName">First Name:</label>
+            <h:inputText id="firstNameInputText" required="true"
+               requiredMessage="Please Enter Your First Name"
+               value="#{User.firstName}"
+               validatorMessage="Name must be fewer than 30 characters">
+               <f:validateLength maximum="30" />
+            </h:inputText>
+            <h:message for="firstNameInputText" styleClass="error"/>
+            
+            
+            <label for="lastName">Last Name:</label>
+            <h:inputText id="lastNameInputText" required="true"
+               requiredMessage="Please Enter Your Name"
+               value="#{User.lastName}"
+               validatorMessage="Name must be fewer than 30 characters">
+               <f:validateLength maximum="30" />
+            </h:inputText>
+            <h:message for="lastNameInputText" styleClass="error"/>
+            
+            <label for="username">Username:</label>
+            <h:inputText id="usernameInputText" required="true"
+               requiredMessage="Please Enter Your Name"
+               value="#{User.username}"
+               validatorMessage="Name must be fewer than 30 characters">
+               <f:validateLength maximum="30" />
+            </h:inputText>
+            <h:message for="usernameInputText" styleClass="error"/>
+            
+            
+            <label for="email">Email:</label>
+            <h:inputText id="emailInputText" required="true"
+               requiredMessage="Please Enter A Valid E-mail Address"
+               value="#{User.email}"
+               validatorMessage="Invalid E-mail Address Format">
+               <f:validateRegex pattern=
+                  "\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+            </h:inputText>
+            <h:message for="emailInputText" styleClass="error"/>
+            
+            <label for="phone">Phone Number:</label>
+            <h:inputText id="phoneInputText" required="true"
+               requiredMessage="Please Enter Your Phone Number"
+               value="#{User.phone}"
+               validatorMessage="Number must be longer than 10 numbers">
+               <f:validateLength minimum="10" />
+            </h:inputText>
+            <h:message for="phoneInputText" styleClass="error"/>
+            
+            <label for="password">Password:</label>
+            <h:inputSecret id="passwordInputText" required="true"
+               requiredMessage="Please Enter A Password"
+               value="#{User.password}"
+               validatorMessage="Password is too short">
+               <f:validateLength minimum="6" />
+            </h:inputSecret>
+            <h:message for="passwordInputText" styleClass="error"/>
+           </h:panelGrid>
+
+            <h:commandButton value="Sign up" action="#{User.save}" />
+         
+            <p>Already Have an Account? <a href="login.xhtml">Login Here</a></p>
+      </h:form>
+   </h:body>
+</html>

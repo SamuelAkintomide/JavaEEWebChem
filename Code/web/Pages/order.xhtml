@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Learning</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href=".../Styles/default.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/navBar.css"/>
+            <link rel="stylesheet" type="text/css" href=".../Styles/order.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <img class="logo" src=".../images/conical.png" alt="logo" width="110px"/>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href=".../index.xhtml">Home</a></li>
+                    <li><a href="learn.xhtml">Learn</a></li>
+                    <li><a href="profile.xhtml">Profile</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="contact.xhtml"><button>Contact</button></a>
+        </header>
+        
+        <main>
+            <h1>Its Time to Buy</h1>
+            <h3>Select Items To Add To The Checkout</h3>
+            <h:form>
+                <h:outputLabel value="Refine Search:" styleClass="search-label"/>
+                <h:inputText value="#{chemicals.searchText}" styleClass="search-field">
+                   <f:ajax execute="@form" render="productsTable" />
+                </h:inputText>
+                <h:dataTable id="productsTable" value="#{chemicals.autofill}" var="product">
+                   <h:column>
+                       <f:facet name="header">Chemical</f:facet>
+                      <h:outputText value="#{product.name}" />
+                   </h:column>
+                   <h:column>
+                      <f:facet name="header">Price</f:facet>
+                       <h:outputText value="£#{product.price}" />
+                   </h:column>
+                   <h:column>
+                       <f:facet name="header">Stock</f:facet>
+                      <h:outputText value="#{product.stock}" />
+                   </h:column>
+                   <h:column>
+                      <h:commandButton value="Add to Cart" action="#{chemicals.addToCart(product)}">
+                         <f:ajax execute="@this" render="@form" />
+                      </h:commandButton>
+                   </h:column>
+                </h:dataTable>
+                <h:commandButton value="View Cart" action="#{chemicals.viewCart}"/>
+            </h:form>
+        </main>
+        <div>
+            <nav1>
+                <ul>
+                    <li><span class="nav1-item">Order</span></li>
+                    <li><a href="#"><i class="fas fa-home"></i>
+                    <span class="nav1-item">Purchase</span></a></li>
+                    <li><a href="#"><i class="fas fa-change"></i>
+                    <span class="nav1-item">Information</span></a></li>
+                    <li><a href="#"><i class="fas fa-change1"></i>
+                    <span class="nav1-item">Suppliers</span></a></li>
+                    <li><a href="#"><i class="fas fa-change2"></i>
+                    <span class="nav1-item">FAQ</span></a></li>
+                    <li><a href="contact.xhtml" class="contact"><i class="fas fa-change3"></i>
+                    <span class="nav1-item">Help</span></a></li>
+                </ul>
+            </nav1>
+        </div>
+   </h:body>
+</html>

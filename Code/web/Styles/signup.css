@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+form{
+    background-image: url(".../images/Signup.png");
+    width: 1520px;
+    height: 680px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 16px;
+    padding: 120px 50px;
+    box-shadow: 4px 4px 16px rgb(55, 22, 133);
+}
+
+h1{
+    position: absolute;
+    top: 5%;
+    left: 20%;
+}
+
+h3{
+    position: absolute;
+    top: 3%;
+    left: 21%;
+}
+
+p{
+    position: absolute;
+    top: 85%;
+    left: 20%;
+}
+
+label{
+    position: relative;
+    top: 0%;
+    left: 35%;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display:  block;
+    width: 300px;
+    padding: 15px;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+img{
+    position: absolute;
+    top: 2%;
+    left: 97%;
+}
+
+input[type="text"], input[type="password"] {
+    position: relative;
+    top: 20%;
+    left: 15%;
+    display: block;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.error {
+    position: relative;
+    top: 74.5%;
+    left: 39%;
+    color: red;
+}
+
+input[type="submit"] {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 100px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+a {
+    color: #007bff;
+}

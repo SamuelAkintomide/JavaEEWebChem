@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+    <head>
+        <title>User Login Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" type="text/css" href=".../Styles/login.css" />
+    </head>
+
+    <body>
+        <f:view>
+            <h:form>
+                <a href=".../index.xhtml"><img src=".../images/Xbutton.png" alt="Home" width="20px" name="home"/></a>
+                <h1>Sign In Here</h1>
+                <h3>Welcome Back</h3>
+                <label for="username">Username:</label>
+                <h:inputText id="username" value="#{User.username}" />
+                <h:message for="username" styleClass="error"/>
+                <label for="password">Password:</label>
+                <h:inputSecret id="password" value="#{User.password}" />		
+                <h:commandButton value="Login" action="#{User.login}" alt="button" />
+                <p>Don't have an account? <a href="signup.xhtml">Sign up here</a></p>
+            </h:form>
+        </f:view>
+        <f:metadata>
+            <f:viewParam name="javax.faces.ViewState" value="#{User.viewState}" />
+            <f:event listener="#{User.init}" type="preRenderView" />
+        </f:metadata>
+    </body>
+</html>

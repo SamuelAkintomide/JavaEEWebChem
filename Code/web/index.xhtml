@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Main Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <link rel="stylesheet" type="text/css" href="Styles/default.css" />
+            <link rel="stylesheet" type="text/css" href="Styles/home.css"/>
+    </h:head>
+    <h:body>
+        <header>
+            <img class="logo" src="images/conical.png" alt="logo" width="110px"/>
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="Pages/learn.xhtml">Learn</a></li>
+                    <li><a href="Pages/order.xhtml">Order</a></li>
+                    <li><a href="Pages/fakeDelete.xhtml">Fake</a></li>
+                    <h:form rendered="#{!User.viewState}">   
+                        <li><a href="Pages/profile.xhtml">Profile</a></li>
+                    </h:form>
+                    <h:form rendered="#{User.viewState}">
+                        <li><a href="Pages/signup.xhtml">Sign Up</a></li>
+                        <li><a href="Pages/login.xhtml">Login</a></li>
+                    </h:form> 
+                </ul>
+            </nav>
+            <a class="cta" href="Pages/contact.xhtml"><button>Contact</button></a>                      
+        </header>
+        <main>
+            <h1>Learn and Buy</h1>
+            <h3>Find Out More About Chemicals #{User.firstName}</h3>
+            
+            
+                <h:form>
+                    <h:inputText id="searchInput" value="#{searchBean.searchText}" styleClass="search-field">
+                        <f:ajax event="keyup" execute="@form" render="autocompleteList" listener="#{searchBean.autocomplete}" />
+                    </h:inputText>
+                    <c:if test="#{not empty searchBean.autoCompleteResults}">
+                        <ul id="autocompleteList">
+                            <c:forEach items="#{searchBean.autoCompleteResults}" var="result">
+                                <li><h:outputLink value="#{result.link}">#{result.label}</h:outputLink></li>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
+                </h:form>
+
+            <p><a href="Pages/signup.xhtml">Not Sure Where to Begin?</a></p>      
+        </main>         
+   </h:body>
+</html>

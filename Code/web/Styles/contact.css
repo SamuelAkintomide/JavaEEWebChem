@@ -1,0 +1,16 @@
+p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+form{
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+h1{
+    font-size: 2.2rem;
+    color: #6600cc;
+}
